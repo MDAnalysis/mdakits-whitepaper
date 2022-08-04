@@ -4,12 +4,12 @@ PDF := $(NAME).pdf
 BIB := zotero-mdanalysis.bib
 
 # currently using biblatex, replace with bibtex otherwise
-BIBTEX := biber
+BIBTEX := bibtex
 LATEX := pdflatex -shell-escape
 
 %.pdf : %.tex
 	$(LATEX) $<
-	$(BIBTEX) $(basename $<)
+	-$(BIBTEX) $(basename $<)
 	$(LATEX) $<
 	$(LATEX) $<
 
@@ -21,7 +21,7 @@ see: $(PDF)
 	test "`uname`" == "Darwin" && open $<
 
 clean:
-	-rm $(NAME).{aux,bcf,log,out,run.xml} *~
+	-rm $(NAME).{aux,bbl,bcf,log,blg,pyg,toc,out,run.xml} *~
 
 clean-all: clean
 	-rm $(PDF)

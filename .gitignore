@@ -1,6 +1,7 @@
 main.pdf
 *~
 _minted-main/
+auto/
 *.aux
 *.bbl
 *.bcf
@@ -9,4 +10,6 @@ _minted-main/
 *.out
 *.run.xml
 *.toc
+*.pyg
+*.suppinfo
 .DS_Store

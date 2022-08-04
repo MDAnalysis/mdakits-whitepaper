@@ -1,11 +1,16 @@
-\documentclass{article}
+% -*- mode: latex; mode: visual-line; fill-column: 9999; coding: utf-8 -*-
+%%% MDAKits whitepaper
+%%%
+%%%
+\documentclass[9pt,whitepaper]{livecoms}
+% use livecoms template (under CC-BY 4.0)
+%
+% Use the 'pubversion' option for adding the citation and publication
+% information to the document footer, when the DOI is assigned.
+
+
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{biblatex}
-% The bib file is read-only. It is linked to the Zotero group
-% https://www.zotero.org/groups/4747225/mdanalysis
-% Add references there and then sync: go to the bib file and hit the "Refresh" button.
-\addbibresource{zotero-mdanalysis.bib}
 
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -20,11 +25,16 @@
 %
 % update the release before publishing a new version
 %
-\newcommand{\release}{v0.1.0}
-%
+\newcommand{\versionnumber}{0.1.0}  % you should update the minor version number in preprints and major version number of submissions.
+
+%%% SHOULD THIS BE THE MDAKits repo OR https://github.com/MDAnalysis/mdakits-whitepaper ?
+\newcommand{\githubrepository}{\url{https://github.com/MDAnalysis/MDAKits}}
+% this should be the main github repository for this article
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{MDAKits: Supporting and promoting the development of community packages leveraging the MDAnalysis library}
+\title{MDAKits: Supporting and promoting the development of community
+  packages leveraging the MDAnalysis library [v\versionnumber]}
 \author[1]{Irfan Alibay}
 \author[2]{Jonathan Barnoud}
 \author[3]{Oliver Beckstein}
@@ -32,19 +42,45 @@
 \author[5]{Fiona Naughton}
 \author[4]{Lily Wang}
 
+% see
+% https://github.com/livecomsjournal/article_templates/blob/master/templates/livecoms-template-reviews.tex
+% for \corr, \orcid, \contrib, \presentadd usage
+
 \affil[1]{Department of Biochemistry, The University of Oxford, United Kingdom}
 \affil[2]{Centro Singular de Investigación en Tecnoloxías Intelixentes, Santiago de Compostela, Spain}
 \affil[3]{Department of Physics, Arizona State University, Tempe, AZ, USA}
 \affil[4]{Open Molecular Software Foundation, Irvine, CA, USA}
 \affil[5]{Cardiovascular Research Institute, University of California, San Francisco, San Francisco, CA, USA}
 
-\date{\today, \release}
+\orcid{Oliver Beckstein}{0000-0003-1340-0831}
+
+\corr{mdanalysis@numfocus.org}{The MDAnalysis Development Team}
+
+\blurb{This document is maintained online on GitHub at \githubrepository; to provide feedback, suggestions, or help improve it, please visit the GitHub repository and participate via the issue tracker.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PUBLICATION INFORMATION
+%%% Fill out these parameters when available
+%%% These are used when the "pubversion" option is invoked
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% NOTE: We might need to tweak the cls file to remove anything not
+%       useful for the whitepaper.
+\pubDOI{10.XXXX/YYYYYYY}
+\pubvolume{<volume>}
+\pubissue{<issue>}
+\pubyear{<year>}
+\articlenum{<number>}
+\datereceived{Day Month Year}
+\dateaccepted{Day Month Year}
 
 \begin{document}
-\maketitle
-\begin{abstract}
+\begin{frontmatter}
+  \maketitle
+  \begin{abstract}
     The open sharing of code that abides by the basic principles of FAIR (findability, accessibility, interoperability, and reusability) is essential to robust, reproducible, and transparent science. However, scientists typically are not supported in making the substantial effort required to make software FAIR-compliant, or incentivized with academic recognition or reward. Here we propose a framework to support a broad ecosystem of MDAnalysis toolkits, or “MDAKits”. We envision that MDAKits will be independent add-on packages building on MDAnalysis that meet a set of software package standards to be listed on a centralized MDAKit registry. We will continually assess packages based on criteria such as the presence of tests and documentation with the aim of encouraging continuous improvement. To lower the barrier of entry for new developers, we will provide tools such as cookiecutter templates and assist with technical support towards fulfilling these criteria. We will also work with journals such as the Journal of Open Source Software to streamline the pathway to publication, creating academic incentive for researchers to publish code. Through the MDAKits framework, we aim to foster the creation of a diverse ecosystem of sustainable community-driven downstream tools.
-\end{abstract}
+  \end{abstract}
+\end{frontmatter}
 
 \tableofcontents
 
@@ -102,9 +138,9 @@ In the rest of this document we detail how MDAnalysis proposes to implement such
 \section{The MDAKit framework}
 \label{sec:mdakitframework}
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/MDAKitFramework.png}
+    \includegraphics[width=\linewidth]{figures/MDAKitFramework.png}
     \caption{Workflow diagram of the MDAKit framework. Starting from the creation of an MDAKit package, with the help of documentation and the MDAKit cookiecutter, the package then goes through the process of being added to the MDAKit registry, undergoing continuous validation and review and eventually reaching the stage of publication.}
     \label{fig:workflow}
 \end{figure}
@@ -217,7 +253,7 @@ This metadata will be used for two purposes: continuous integration testing and 
 \subsection{Registering MDAKits}
 \label{sec:registration}
 
-\begin{figure}
+\begin{figure*}[hbt!]
     \centering
     \begin{minted}{yaml}
 ## Required entries
@@ -251,7 +287,7 @@ publications:
     \end{minted}
     \caption{YAML metadata file for an MDAKit entry of the propkatraj package, stored as \texttt{mdakits/propkatraj/metadata.yaml} in the registry repository.}
     \label{fig:metadatapropkatraj}
-\end{figure}
+\end{figure*}
 
 A key feature of the MDAKit framework is the process of adding MDAKits to the registry. As previously defined, our intent is to offer a low barrier to entry and have packages be registered early in their development cycles. This allows developers to benefit from the MDAKit registry validation and review processes early on, hopefully lowering the barrier to further improvements and encouraging early user interactions and feedback.
  
@@ -328,16 +364,64 @@ In Section~\ref{sec:mdakitframework} we lay out the aims and structure of an MDA
 This document is just the first step and broad guide to our vision of developing a rich, diverse software ecosystem, and we are still in the early stages of implementing MDAKits. While we expect that we may need to revisit and refine our strategy to best serve the needs of the community, we believe that the fundamental framework outlined here will bring great benefit to the software written and used by scientists, and thereby empower transparent and reproducible research. 
 
 
-\section{Acknowledgements}
+\section*{Acknowledgements}
 
 We gratefully acknowledge the 163 developers and countless community members who have contributed to the MDAnalysis project over the last 16 years and NumFOCUS for its support as our fiscal sponsor.
 
+
+%\section*{Author Contributions}
+%%%%%%%%%%%%%%%%
+% This section mustt describe the actual contributions of
+% author. Since this is an electronic-only journal, there is
+% no length limit when you describe the authors' contributions,
+% so we recommend describing what they actually did rather than
+% simply categorizing them in a small number of
+% predefined roles as might be done in other journals.
+%
+% See the policies ``Policies on Authorship'' section of https://livecoms.github.io
+% for more information on deciding on authorship and author order.
+%%%%%%%%%%%%%%%%
+%
+%(Explain the contributions of the different authors here)
+
+% We suggest you preserve this comment:
+%For a more detailed description of author contributions,
+%see the GitHub issue tracking and changelog at \githubrepository.
+
+%\section*{Other Contributions}
+%%%%%%%%%%%%%%%
+% You should include all people who have filed issues that were
+% accepted into the paper, or that upon discussion altered what was in the paper.
+% Multiple significant contributions might mean that the contributor
+% should be moved to authorship at the discretion of the a
+%
+% See the policies ``Policies on Authorship'' section of https://livecoms.github.io for
+% more information on deciding on authorship and author order.
+%%%%%%%%%%%%%%%
+
+%(Explain the contributions of any non-author contributors here)
+% We suggest you preserve this comment:
+%For a more detailed description of contributions from the community and others, see the GitHub issue tracking and changelog at \githubrepository.
+
+
+\section*{Potentially Conflicting Interests}
+
+The authors declare no potential conflicts of interest.
+
+\section*{Funding Information}
+
 This work was possible thanks to a grant from the Chan-Zuckerberg Initiative, supporting MDAnalysis and the MDAKit project under an EOSS4 award.
 
-\printbibliography
-% add references to Zotero group
-% https://www.zotero.org/groups/4747225/mdanalysis and
-% then Refresh the bib file in Overleaf.
+
+\section*{Author Information}
+\makeorcid
+
+
+% The bib file is read-only. It is linked to the Zotero group
+% https://www.zotero.org/groups/4747225/mdanalysis
+% Add references there and then sync: go to the bib file and hit the "Refresh" button.
+
+\bibliography{zotero-mdanalysis}
 
 
 \end{document}
