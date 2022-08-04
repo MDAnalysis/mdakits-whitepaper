@@ -56,18 +56,18 @@
 
 Software has become increasingly essential to research. In many areas, it underlies fundamental tasks such as generating, processing, analyzing, storing, visualizing, and communicating the key results and insights ultimately published. Despite this, software is typically not central to the publication peer review process in many scientific fields. Consequently, scientific code frequently fails to meet the basic tenets of FAIR: findability, accessibility, interoperability, and reusability \cite{chue_hong_fair_2021, wilkinson_fair_2016}, 
 
-With the publication of “The FAIR Guiding Principles for scientific data management and stewardship” in 2016 and the follow-up FAIR Principles for Research Software in 2022, it has become increasingly acknowledged that abiding by the principles of FAIR is crucial to promoting robust, reproducible, and efficient scientific discovery and innovation  \cite{chue_hong_fair_2021, wilkinson_fair_2016}. We believe that extending FAIR principles to include open-source release not only significantly advances that goal, but furthermore is necessary for transparent research. Open sharing of code brings a number of substantial benefits to the scientific community. For example, scientists can accurately replicate a given methodology or re-use previous code, reducing duplication of effort and reducing the risk of implementation errors. Indeed, the molecular simulation community in particular has made a concerted effort over recent years to encourage the open sharing of scientific codes \cite{walters_code_2020}. For example, as of July 2022, over 4700 GitHub repositories containing Python code that makes use of MDAnalysis \cite{gowers_mdanalysis_2016} have been made publicly available.
+With the publication of “The FAIR Guiding Principles for scientific data management and stewardship” in 2016 and the follow-up FAIR Principles for Research Software in 2022, it has become increasingly acknowledged that abiding by the principles of FAIR is crucial to promoting robust, reproducible, and efficient scientific discovery and innovation  \cite{chue_hong_fair_2021, wilkinson_fair_2016}. We believe that extending FAIR principles to include open-source release not only significantly advances that goal, but furthermore is necessary for transparent research. Open sharing of code brings a number of substantial benefits to the scientific community. For example, scientists can accurately replicate a given methodology or re-use previous code, reducing duplication of effort and reducing the risk of implementation errors. Indeed, the molecular simulation community in particular has made a concerted effort over recent years to encourage the open sharing of scientific codes \cite{walters_code_2020}. For example, as of July 2022, over 4700 GitHub repositories containing Python code that makes use of MDAnalysis \cite{michaud-agrawal_mdanalysis_2011, gowers_mdanalysis_2016} have been made publicly available.
 
-However, simply sharing code is not sufficient to fulfill FAIR guidelines. In fact, making software FAIR compliant requires significant investment and often expert knowledge on the part of the developers, especially if the code was written specifically for a particular research project. For example, the Python ecosystem is so dynamic that it is common for research code to rapidly become obsolete or unusable if a new version of a key library is released. To fulfill the Reusability tenet of FAIR alone, code should include documentation, version control, and dependency management. Ideally, it would also include unit tests, examples, and packaging. Even when code is released in reference to a publication, it often falls short of ideal FAIR standards. A short survey of publications in Scopus [4] and the Journal of Open Source Software [5] over 2017 – 2021 identified that out of a total 720 papers citing MDAnalysis, only 43 linked to code available on a version control platform such as GitHub, GitLab, or Bitbucket. Of these, only 18 met the requirements of best practices: they implemented unit tests, comprehensive documentation, and some means of installation.
+However, simply sharing code is not sufficient to fulfill FAIR guidelines. In fact, making software FAIR compliant requires significant investment and often expert knowledge on the part of the developers, especially if the code was written specifically for a particular research project. For example, the Python ecosystem is so dynamic that it is common for research code to rapidly become obsolete or unusable if a new version of a key library is released. To fulfill the Reusability tenet of FAIR alone, code should include documentation, version control, and dependency management. Ideally, it would also include unit tests, examples, and packaging. Even when code is released in reference to a publication, it often falls short of ideal FAIR standards. A short survey of publications in Scopus \cite{noauthor_scopus_nodate} and the Journal of Open Source Software \cite{noauthor_journal_nodate} over 2017–-2021 identified that out of a total 720 papers citing MDAnalysis \cite{michaud-agrawal_mdanalysis_2011, gowers_mdanalysis_2016}, only 43 linked to code available on a version control platform such as GitHub, GitLab, or Bitbucket. Of these, only 18 met the requirements of best practices: they implemented unit tests, comprehensive documentation, and some means of installation.
 
 Two major factors contribute to the lack of open-source FAIR compliant code. Firstly, code is typically written by scientists with no formal training or support in programming, for whom implementing FAIR principles can pose an intimidating and tedious barrier. Secondly, despite the substantial investment of effort and time required to implement best practices, publishing FAIR software is not typically appreciated with academic recognition or reward. Fostering a culture of open-source FAIR software requires addressing both.
 
 \subsection{Centralized open-source packages such as MDAnalysis offer a limited solution}
 \label{sec:centralization}
 
-One solution is to consolidate scientific code around a small number of large, central packages. MDAnalysis is a widely-used open-source Python library for molecular simulation data. With over 16 years of development by more than 160 developers, MDAnalysis has refined its code base to offer a mature, robust, flexible API that offers a range of high-performance tools to extract, manipulate, and analyze data from the majority of common simulation formats. MDAnalysis tools have been used for a variety of scientific applications ranging from exploring protein-ligand interactions \cite{alibay_ialibaymdrestraintsgenerator_2021, kokh_workflow_2020, bouysset_prolif_2021}, to understanding lipid behavior \cite{wilson_investigating_2021, smith_lipyphilic_2021}, to assessing the behavior of novel materials \cite{gowers_kugupukugupu_2021}, [12]. 
+One solution is to consolidate scientific code around a small number of large, central packages. MDAnalysis is a widely-used open-source Python library for molecular simulation data. With over 16 years of development by more than 160 developers, MDAnalysis has refined its code base to offer a mature, robust, flexible API that offers a range of high-performance tools to extract, manipulate, and analyze data from the majority of common simulation formats. MDAnalysis tools have been used for a variety of scientific applications ranging from exploring protein-ligand interactions \cite{alibay_ialibaymdrestraintsgenerator_2021, kokh_workflow_2020, bouysset_prolif_2021}, to understanding lipid behavior \cite{wilson_investigating_2021, smith_lipyphilic_2021}, to assessing the behavior of novel materials \cite{gowers_kugupukugupu_2021, loche_maicos_2022}. 
 
-Until recently, MDAnalysis has encouraged users to contribute their code back into the library to make it available to others. Notable examples of this include the waterdynamics and ENCORE \cite{tiberti_encore_2015} analysis modules. This approach, also successfully taken by packages such as cpptraj \cite{roe_ptraj_2013} and the GROMACS tools \cite{abraham_gromacs_2015}, has a number of key advantages:
+Until recently, MDAnalysis encouraged users to contribute their code back into the library to make it available to others. Notable examples of this include the waterdynamics \cite{araya-secchi_characterization_2014} and ENCORE \cite{tiberti_encore_2015} analysis modules. This approach, also successfully taken by packages such as cpptraj \cite{roe_ptraj_2013} and the GROMACS tools \cite{abraham_gromacs_2015}, has a number of key advantages:
 \begin{itemize}
     \item MDAnalysis can ensure that the code follows best practices (including documentation and tests)
     \item Code is promoted and made freely accessible to all MDAnalysis users
@@ -89,7 +89,7 @@ The many disadvantages listed above can severely limit the usefulness of central
 \subsection{An ecosystem of downstream packages may yield more sustainable progress}
 \label{sec:ecosystemadvantages}
 
-We believe that a sustainable alternative solution is for communities such as MDAnalysis to encourage and foster researchers in their efforts towards developing individual software. We propose to overcome the difficulties of implementing FAIR best practices through the provision of structured technical assistance. Specifically, we envision that suitable tooling and documentation could be provided to ease the development of new packages, as well as a platform (which we refer to as a “registry”) where packages that meet certain standards can be advertised to the community. This idea is not novel; it is reminiscent of other successful ecosystems such as PLUMED’s PLUMED-NEST \cite{bonomi_promoting_2019} or AiiDA’s plugin registry [17], which list available tools that are known to work to their respective user communities.
+We believe that a sustainable alternative solution is for communities such as MDAnalysis to encourage and foster researchers in their efforts towards developing individual software. We propose to overcome the difficulties of implementing FAIR best practices through the provision of structured technical assistance. Specifically, we envision that suitable tooling and documentation could be provided to ease the development of new packages, as well as a platform (which we refer to as a “registry”) where packages that meet certain standards can be advertised to the community. This idea is not novel; it is reminiscent of other successful ecosystems such as PLUMED’s PLUMED-NEST \cite{bonomi_promoting_2019} or AiiDA’s plugin registry \cite{noauthor_aiida_nodate}, which list available tools that are known to work to their respective user communities.
 
 With the help of tooling such as cookiecutter templates and example repositories, we can model best practices, promote the use of helpful tools e.g. for checking code coverage, and reduce the work required to set up processes such as continuous integration, versioned documentation, packaging and deployment. Developers can also reach out to the MDAnalysis community for feedback, technical assistance, or even make connections with new co-developers and potential users. Decoupled from MDAnalysis’s release cycle, developers would be able to introduce new changes as required, keeping complete control over their code-base. Joining an MDAnalysis registry would allow for frequent and streamlined communication between MDAnalysis and downstream developers, allowing developers to be efficiently forewarned about potential breaking changes.
 
@@ -126,7 +126,7 @@ We wish to state three main points that the framework is \emph{not} designed for
 \subsection{Overview of the framework}
 \label{sec:overviewframework}
 
-The MDAKit framework (Fig.~\ref{fig:workflow}) is a multi-step process. In the first step of the MDAKit framework, developers create an initial package which is intended to achieve a set purpose of their choice. To help with this process, MDAnalysis provides a cookiecutter template specifically for MDAKits [18], alongside documentation on best practices and how to optimally use the MDAnalysis API. An overview of what we consider to be best practices for the contents of MDAKit packages is included in Section~\ref{sec:definitions}. We note that at this point MDAKits are not expected to fully adhere to best practices, but should at least meet the minimum requirements defined in Section~\ref{sec:definitions} before moving to the next step along this process.
+The MDAKit framework (Fig.~\ref{fig:workflow}) is a multi-step process. In the first step of the MDAKit framework, developers create an initial package which is intended to achieve a set purpose of their choice. To help with this process, MDAnalysis provides a cookiecutter template specifically for MDAKits \cite{wang_cookiecutter_nodate}, alongside documentation on best practices and how to optimally use the MDAnalysis API. An overview of what we consider to be best practices for the contents of MDAKit packages is included in Section~\ref{sec:definitions}. We note that at this point MDAKits are not expected to fully adhere to best practices, but should at least meet the minimum requirements defined in Section~\ref{sec:definitions} before moving to the next step along this process.
 
 Once a package is suitably developed, code owners are encouraged to add the details of their code to the “MDAKit registry” which will advertise their package to the MDAnalysis community and offer continual validation and review tools to help with package maintenance. Section 4 contains more information about the MDAKit registry, including the registration process (Section 4.2). Briefly, the registration process involves submitting a metadata file to the registry that contains essential information about the MDAKit, such as where the source code is provided, who the code authors are, and how to install the MDAKit. The contents of this metadata file will be reviewed both by automatic code checks and the MDAnalysis developer team before being  added to the registry. We want to highlight  that this process does not include checks on scientific validity or code health. In fact, none of the processes in this framework account for the scientific validity of the MDAKits. While members of the community are free to offer help, scientific or technical validity is beyond the scope of what is feasible with the MDAnalysis registry.
 
@@ -145,7 +145,7 @@ Where possible, the framework will encourage a code review process to be carried
 \section{Defining MDAKits: best practice package features}
 \label{sec:definitions}
 
-Here we list requirements that we believe MDAKits should strive to fulfill in order to meet best practices in Python package usability and maintenance. To help with implementing these, a cookiecutter is provided which offers a template for potential MDAKits to follow [18]. We want to emphasize again that the aim of the MDAKit project is to encourage best practices whilst also minimizing barriers to sharing code where possible. Therefore, only a minimal set of requirements listed here as “required”l are necessary for MDAKits to be included in the MDAKit registry. Similarly, we do not mean to enforce the label of MDAKit on any package; the process is fully optional and the code owners reserve the right to associate themselves with it.
+Here we list requirements that we believe MDAKits should strive to fulfill in order to meet best practices in Python package usability and maintenance. To help with implementing these, a cookiecutter is provided which offers a template for potential MDAKits to follow \cite{wang_cookiecutter_nodate}. We want to emphasize again that the aim of the MDAKit project is to encourage best practices whilst also minimizing barriers to sharing code where possible. Therefore, only a minimal set of requirements listed here as “required”l are necessary for MDAKits to be included in the MDAKit registry. Similarly, we do not mean to enforce the label of MDAKit on any package; the process is fully optional and the code owners reserve the right to associate themselves with it.
  
 \subsection{Code using MDAnalysis (required)}
 \label{sec:usesmdanalysis}
@@ -157,14 +157,14 @@ This is the base requirement of all MDAKits. The intent of the MDAKit framework 
 
 The core aim of MDAKits is to encourage the open sharing of codes to potential users within the MDAnalysis community and beyond. To achieve this, we require that codes under this framework be released as open source. Here we define open source as being under an Open Source Initiative (OSI) approved license.
 
-As of writing, the MDAnalysis library is currently licensed under GPLv2+ [19]. Due to limitations with this license type, we cannot currently recommend other licenses than GPLv2+ for codes importing MDAnalysis. However, we hope to relicense to a less restrictive license. In this event, MDAKits will be able to adopt a wider range of OSI approved licenses.
+As of writing, the MDAnalysis library is currently licensed under GPLv2+ \cite{noauthor_gnu_nodate}. Due to limitations with this license type, we cannot currently recommend other licenses than GPLv2+ for codes importing MDAnalysis. However, we hope to relicense to a less restrictive license. In this event, MDAKits will be able to adopt a wider range of OSI approved licenses.
  
 \subsection{Versioning and provision under an accessible version-controlled repository (required)}
 \label{sec:versioning}
 
-The ability to clearly identify changes in a codebase is crucial to enabling reproducible science. By referencing a specific release version, it is possible to trace back any bug fixes or major changes which could lead to a difference in results obtained with a later version of the same codebase. Whilst we encourage the use of semver [20], any PEP440 [21] compliant versioning specification, would be suitable for MDAKits.
+The ability to clearly identify changes in a codebase is crucial to enabling reproducible science. By referencing a specific release version, it is possible to trace back any bug fixes or major changes which could lead to a difference in results obtained with a later version of the same codebase. Whilst we encourage the use of semver \cite{preston-werner_semantic_nodate}, any PEP440 \cite{noauthor_pep_nodate-1} compliant versioning specification, would be suitable for MDAKits.
 
-Beyond versioning releases, it is also crucial to be able to develop code in a sustainable and collaborative manner. The most popular way of achieving this is through the use of version control through Git [22]. We require all MDAKits to be held in a publicly facing version controlled repository such as GitHub [23], GitLab [24], or Bitbucket [25].
+Beyond versioning releases, it is also crucial to be able to develop code in a sustainable and collaborative manner. The most popular way of achieving this is through the use of version control through Git \cite{noauthor_git_nodate}. We require all MDAKits to be held in a publicly facing version controlled repository such as GitHub \cite{github_inc_github_2022-2}, GitLab \cite{gitlab_inc_gitlab_2022}, or Bitbucket \cite{atlassian_bitbucket_2022}.
 
 \subsection{Designated code authors and maintainers (required)}
 \label{sec:authors}
@@ -176,23 +176,23 @@ In order for users to be able to contact the code owners and maintainers, all MD
 
 Describing what a given code does and how to use it is a key component of open sharing. Ideally a package would include a complete description of the entire codebase, including both API documentation and some kind of user guide with worked examples on how the code could be used in certain scenarios. Whilst this is recommended as best practices for an MDAKit, we recognise that this is not  always feasible, especially in the early stages of development. Therefore, the minimum requirement for MDAKits is to have a readme file which details the key aspects of the MDAKit, such as what it is intended to do, how to install it, and a basic usage example.
 
-For best practices, we strongly recommend using docstrings (see PEP 257 [26]) to document code components and using a tool such as ReadTheDocs [27] to build, version and host documentation in a user-friendly manner. We also recommend using duecredit \cite{halchenko_duecreditduecredit_2021} to provide the correct attributions to a given method if it has been published previously.
+For best practices, we strongly recommend using docstrings (see PEP 257 \cite{noauthor_pep_nodate}) to document code components and using a tool such as ReadTheDocs \cite{read_the_docs_inc_read_2022} to build, version and host documentation in a user-friendly manner. We also recommend using duecredit \cite{halchenko_duecreditduecredit_2021} to provide the correct attributions to a given method if it has been published previously.
 
 \subsection{Tests and continuous integration (required)}
 \label{sec:tests}
 
 Testing a critical component to ensure that code behaves as intended. Not only does it prevent erroneous coding, but it also assures users that the code they rely on is working as intended. We require at least a single regression test for major functionality to qualify for the registry (i.e. if a toolkit implements a new analysis method, at least one test that checks to see if the analysis code yields the expected value on provided data;  regression tests can often double as example documentation).
 
-Ideally one should do full unit testing of the contents of a code, ensuring that not only a specific outcome is reached, but also that each smaller component works. As part of best practices, we highly recommend implementing tests using a framework such as pytest [29] for executing tests and codecov [30] to capture which lines are covered by the tests. We strongly encourage that a minimum of at least 80% of the code lines be covered by tests. 
+Ideally one should do full unit testing of the contents of a code, ensuring that not only a specific outcome is reached, but also that each smaller component works. As part of best practices, we highly recommend implementing tests using a framework such as pytest \cite{krekel_pytest-devpytest_2004} for executing tests and codecov \cite{codecov_llc_codecov_2022} to capture which lines are covered by the tests. We strongly encourage that a minimum of at least 80% of the code lines be covered by tests. 
 
-To ensure that tests are run regularly, best practices would be to implement a continuous integration pipeline that tests every time new code is introduced. We encourage the use of free pipelines such as GitHub Actions [31] to achieve this.
+To ensure that tests are run regularly, best practices would be to implement a continuous integration pipeline that tests every time new code is introduced. We encourage the use of free pipelines such as GitHub Actions \cite{github_inc_github_2022-1} to achieve this.
 
 \subsection{Packaging}
 \label{sec:packaging}
 
 Providing a standard means of installing code as a package is important to ensuring that the others can correctly link to (i.e. import in the case of Python) and use its contents. Whilst it can be easy to expect users to simply read a Python script, look at its required dependencies, and install them manually, this can quickly become unreasonable should the code grow beyond a single file. Additionally, the lack of clearly defined versions, including the intended Python versions, can lead to inoperable code.
 
-As best practices we heavily encourage the use of setuptools [32] or an alternative such as poetry [33] for package installation. We also encourage that packages be available on common package repositories such as PyPi [34] and conda-forge [35]. The use of such repositories and their respective package managers can significantly lower the barrier to installing a package, enabling new users to rapidly get started using it.
+As best practices we heavily encourage the use of setuptools \cite{noauthor_pypasetuptools_2022} or an alternative such as poetry \cite{noauthor_poetry_nodate} for package installation. We also encourage that packages be available on common package repositories such as PyPi \cite{noauthor_pypi_nodate} and conda-forge \cite{conda-forge_community_conda-forge_2015}. The use of such repositories and their respective package managers can significantly lower the barrier to installing a package, enabling new users to rapidly get started using it.
 
 \subsection{Bug reporting, user discussions, and community guidelines}
 \label{Sec:community}
@@ -305,12 +305,12 @@ The existence of the MDAKits framework does not preclude the addition of new cod
 \subsection{Towards publication}
 \label{sec:publication}
 
-We have laid out a number of best practices here that we encourage MDAKits to fulfill. These essentially amount to the majority of the contribution criteria for submissions to software-focused journals such as the Journal Open Source Software [36]. In order to incentivise developers, we will heavily encourage MDAKits to consider submission to a journal such as JOSS once they meet the required levels of best practices. To aid in this process, the MDAnalysis developers will in the first instance work with journal editors at JOSS to create a streamlined process to submit MDAKits as JOSS entries. The details of this process are still under development.
+We have laid out a number of best practices here that we encourage MDAKits to fulfill. These essentially amount to the majority of the contribution criteria for submissions to software-focused journals such as the Journal Open Source Software [36]. In order to incentivise developers, we will heavily encourage MDAKits to consider submission to a journal such as JOSS \cite{noauthor_journal_nodate} once they meet the required levels of best practices. To aid in this process, the MDAnalysis developers will in the first instance work with journal editors at JOSS to create a streamlined process to submit MDAKits as JOSS entries \cite{noauthor_submitting_2018}. The details of this process are still under development.
 
 \subsection{Raising issues, concerns, and paths to registry removal}
 \label{sec:removal}
 
-If community members (users, developers or otherwise) have concerns about an MDAKit, we primarily encourage them to raise issues on the MDAKit’s issue tracker. However, in situations where the MDAKit maintainers cannot respond, or if the concern relates to code of conduct breaches, MDAnalysis developers may step in. If an MDAKit has systemic issues with its correctness, the MDAKit may be given special annotations warning users about the issues before using the code. We generally view the MDAKit registry as a permanent record, and will avoid removing packages after registration even if they become fully obsolete. However, we reserve the right to remove packages at our discretion in specific cases, notably code of conduct breaches and violation of the GitHub terms of service [37].
+If community members (users, developers or otherwise) have concerns about an MDAKit, we primarily encourage them to raise issues on the MDAKit’s issue tracker. However, in situations where the MDAKit maintainers cannot respond, or if the concern relates to code of conduct breaches, MDAnalysis developers may step in. If an MDAKit has systemic issues with its correctness, the MDAKit may be given special annotations warning users about the issues before using the code. We generally view the MDAKit registry as a permanent record, and will avoid removing packages after registration even if they become fully obsolete. However, we reserve the right to remove packages at our discretion in specific cases, notably code of conduct breaches and violation of the GitHub terms of service \cite{github_inc_github_2022}.
 
 \subsection{Long term registry maintenance and support}
 \label{sec:maintenance}
@@ -335,61 +335,9 @@ We gratefully acknowledge the 163 developers and countless community members who
 This work was possible thanks to a grant from the Chan-Zuckerberg Initiative, supporting MDAnalysis and the MDAKit project under an EOSS4 award.
 
 \printbibliography
-
-%\section{References}
-% move to Zotero group https://www.zotero.org/groups/4747225/mdanalysis
-
-
-[4]    “Scopus.” https://www.scopus.com/
-
-[5]    “Journal of Open Source Software.” https://joss.theoj.org
-
-
-
-[12]    A. Schlaich and P. Loche, “MAICoS / MAICoS · GitLab,” GitLab. https://gitlab.com/maicos-devel/maicos
-
-
-
-[17]    “AiiDA plugin registry.” https://aiidateam.github.io/aiida-registry/
-
-[18]    “Cookiecutter for MDAnalysis-based packages.” MDAnalysis, Jul. 29, 2022. [Online]. Available: https://github.com/MDAnalysis/cookiecutter-mdakit
-
-[19]    “GNU General Public License v2.0 - GNU Project - Free Software Foundation.” https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
-
-[20]    T. Preston-Werner, “Semantic Versioning 2.0.0,” Semantic Versioning. https://semver.org/
-
-[21]    “PEP 440 – Version Identification and Dependency Specification | peps.python.org.” https://peps.python.org/pep-0440/
-
-[22]    “Git.” https://git-scm.com/
-
-[23]    “GitHub,” GitHub. https://github.com
-
-[24]    “GitLab.” https://about.gitlab.com/
-
-[25]    Atlassian, “Bitbucket | Git solution for teams using Jira,” Bitbucket. https://bitbucket.org/product
-
-[26]    “PEP 257 – Docstring Conventions | peps.python.org.” https://peps.python.org/pep-0257/
-
-[27]    “Read the Docs.” https://readthedocs.org/
-
-[29]    H. Krekel, B. Oliveira, R. Pfannschmidt, F. Bruynooghe, B. Laugher, and F. Bruhin, “pytest.” 2004. [Online]. Available: https://github.com/pytest-dev/pytest
-
-[30]    “Codecov,” Codecov. https://about.codecov.io/
-
-[31]    “GitHub Actions,” GitHub. https://github.com/features/actions
-
-[32]    P. P. Authority, “setuptools: Easily download, build, install, upgrade, and uninstall Python packages.” [Online]. Available: https://github.com/pypa/setuptools
-
-[33]    “Poetry - Python dependency management and packaging made easy.” https://python-poetry.org/
-
-[34]    “PyPI · The Python Package Index,” PyPI. https://pypi.org/
-
-[35]    “conda-forge | community driven packaging for conda.” https://conda-forge.org/
-
-[36]    “JOSS - Submission requirements.” https://joss.readthedocs.io/en/latest/submitting.html
-
-[37]    “GitHub Terms of Service,” GitHub Docs. https://ghdocs-prod.azurewebsites.net/en/site-policy/github-terms/github-terms-of-service
-
+% add references to Zotero group
+% https://www.zotero.org/groups/4747225/mdanalysis and
+% then Refresh the bib file in Overleaf.
 
 
 \end{document}
