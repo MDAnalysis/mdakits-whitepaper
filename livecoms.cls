@@ -1,8 +1,9 @@
 % A template for LiveCoMS submissions.
+% modified for use as a White Paper class for MDAnalysis
 %
 % adapted from elife template, v1.4
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{livecoms}[2017/08/10, v0.5...]
+\ProvidesClass{livecoms}[2017/08/10, v0.5...+MDAnalysis patches]
 
 \RequirePackage[english]{babel}
 
@@ -27,6 +28,7 @@
 
 %% the type of document this is.  The current types:
 % bestpractices, editorial, tutorial, training, review, software, lessons
+% MDA addition: whitepaper
 \newif\if@bestpractices
 \DeclareOption{bestpractices}{\@bestpracticestrue}
 
@@ -47,6 +49,10 @@
 
 \newif\if@lessons
 \DeclareOption{lessons}{\@lessonstrue}
+
+\newif\if@whitepaper
+\DeclareOption{whitepaper}{\@whitepapertrue}
+
 
 %Publication Information
 \newif\if@pubversion
@@ -234,11 +240,19 @@
 % nothing
 \fi
 
+\if@whitepaper
+\documenttypetrue
+\newcommand{\documenttype}{White Paper}
+\else
+% nothing
+\fi
+
+
 \fancyhf{}
 \ifdocumenttype
 \chead{%
 \setlength{\fboxsep}{3pt}
-\colorbox{LiveCoMSMediumGrey}{\begin{minipage}{\headwidth}\centering\color{white} A LiveCoMS \documenttype\end{minipage}}%
+\colorbox{LiveCoMSMediumGrey}{\begin{minipage}{\headwidth}\centering\color{white}\documenttype\end{minipage}}%
 }
 \fi
 
