@@ -78,27 +78,7 @@
 \begin{frontmatter}
   \maketitle
   \begin{abstract}
-    The open sharing of code that abides by the basic principles of
-    FAIR (findability, accessibility, interoperability, and
-    reusability) is essential to robust, reproducible, and transparent
-    science. However, scientists typically are not supported in making
-    the substantial effort required to make software FAIR-compliant,
-    or incentivized with academic recognition or reward. Here we
-    propose a framework to support a broad ecosystem of MDAnalysis
-    toolkits, or “MDAKits”. We envision that MDAKits will be
-    independent add-on packages building on MDAnalysis that meet a set
-    of software package standards to be listed on a centralized MDAKit
-    registry. We will continually assess packages based on criteria
-    such as the presence of tests and documentation with the aim of
-    encouraging continuous improvement. To lower the barrier of entry
-    for new developers, we will provide tools such as cookiecutter
-    templates and assist with technical support towards fulfilling
-    these criteria. We will also work with journals such as the
-    Journal of Open Source Software to streamline the pathway to
-    publication, creating academic incentive for researchers to
-    publish code. Through the MDAKits framework, we aim to foster the
-    creation of a diverse ecosystem of sustainable community-driven
-    downstream tools.
+    The open sharing of code that abides by the basic principles of FAIR (findability, accessibility, interoperability, and reusability) is essential to robust, reproducible, and transparent science. However, scientists typically are not supported in making the substantial effort required to make software FAIR-compliant, or incentivized with academic recognition or reward. Here we propose a framework to support a broad ecosystem of MDAnalysis toolkits, or “MDAKits”. We envision that MDAKits will be independent add-on packages building on MDAnalysis that meet a set of software package standards to be listed on a centralized MDAKit registry. We will continually assess packages based on criteria such as the presence of tests and documentation with the aim of encouraging continuous improvement. To lower the barrier of entry for new developers, we will provide tools such as cookiecutter templates and assist with technical support towards fulfilling these criteria. We will also work with journals such as the Journal of Open Source Software to streamline the pathway to publication, creating academic incentive for researchers to publish code. Through the MDAKits framework, we aim to foster the creation of a diverse ecosystem of sustainable community-driven downstream tools.
   \end{abstract}
 \end{frontmatter}
 
@@ -158,9 +138,9 @@ In the rest of this document we detail how MDAnalysis proposes to implement such
 \section{The MDAKit framework}
 \label{sec:mdakitframework}
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/MDAKitFramework.png}
+    \includegraphics[width=\linewidth]{figures/MDAKitFramework.png}
     \caption{Workflow diagram of the MDAKit framework. Starting from the creation of an MDAKit package, with the help of documentation and the MDAKit cookiecutter, the package then goes through the process of being added to the MDAKit registry, undergoing continuous validation and review and eventually reaching the stage of publication.}
     \label{fig:workflow}
 \end{figure}
@@ -273,7 +253,7 @@ This metadata will be used for two purposes: continuous integration testing and 
 \subsection{Registering MDAKits}
 \label{sec:registration}
 
-\begin{figure}
+\begin{figure*}[hbt!]
     \centering
     \begin{minted}{yaml}
 ## Required entries
@@ -307,7 +287,7 @@ publications:
     \end{minted}
     \caption{YAML metadata file for an MDAKit entry of the propkatraj package, stored as \texttt{mdakits/propkatraj/metadata.yaml} in the registry repository.}
     \label{fig:metadatapropkatraj}
-\end{figure}
+\end{figure*}
 
 A key feature of the MDAKit framework is the process of adding MDAKits to the registry. As previously defined, our intent is to offer a low barrier to entry and have packages be registered early in their development cycles. This allows developers to benefit from the MDAKit registry validation and review processes early on, hopefully lowering the barrier to further improvements and encouraging early user interactions and feedback.
  
@@ -384,7 +364,7 @@ In Section~\ref{sec:mdakitframework} we lay out the aims and structure of an MDA
 This document is just the first step and broad guide to our vision of developing a rich, diverse software ecosystem, and we are still in the early stages of implementing MDAKits. While we expect that we may need to revisit and refine our strategy to best serve the needs of the community, we believe that the fundamental framework outlined here will bring great benefit to the software written and used by scientists, and thereby empower transparent and reproducible research. 
 
 
-\section{Acknowledgements}
+\section*{Acknowledgements}
 
 We gratefully acknowledge the 163 developers and countless community members who have contributed to the MDAnalysis project over the last 16 years and NumFOCUS for its support as our fiscal sponsor.
 
