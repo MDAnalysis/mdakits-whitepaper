@@ -182,6 +182,29 @@ Where possible, the framework will encourage a code review process to be carried
 \label{sec:definitions}
 
 Here we list requirements that we believe MDAKits should strive to fulfill in order to meet best practices in Python package usability and maintenance. To help with implementing these, a cookiecutter is provided which offers a template for potential MDAKits to follow \cite{wang_cookiecutter_nodate}. We want to emphasize again that the aim of the MDAKit project is to encourage best practices whilst also minimizing barriers to sharing code where possible. Therefore, only a minimal set of requirements listed here as “required”l are necessary for MDAKits to be included in the MDAKit registry. Similarly, we do not mean to enforce the label of MDAKit on any package; the process is fully optional and the code owners reserve the right to associate themselves with it.
+
+\begin{Checklists}
+\begin{checklist}{MDAKit: required features}
+\textbf{All MDAKits will have to implement the features on this list in order to become registered.}
+\begin{itemize}
+\item Code in the package \emph{uses MDAnalysis} (\ref{sec:usesmdanalysis}).
+\item Open source code is published under an \emph{OSI approved license} (\ref{sec:opensource}).
+\item Code is \emph{versioned} and provided in an \emph{accessible version-controlled repository} (\ref{sec:versioning}).
+\item Code \emph{authors and maintainers are clearly designated} (\ref{sec:authors}).
+\item \emph{Documentation} is provided (\ref{sec:documentation}).
+\item \emph{Tests and continuous integration} are present (\ref{sec:tests}).
+\end{itemize}
+\end{checklist}
+
+\begin{checklist}{MDAKit: optional features}
+\textbf{Features that are highly recommended to be implemented.}
+\begin{itemize}
+\item Code is \emph{installable as a standard package} (\ref{sec:packaging}).
+\item Information on \emph{bug reporting, user discussions, and community guidelines} is made available (\ref{sec:community}).
+\end{itemize}
+\end{checklist}
+\end{Checklists}
+
  
 \subsection{Code using MDAnalysis (required)}
 \label{sec:usesmdanalysis}
@@ -231,7 +254,7 @@ Providing a standard means of installing code as a package is important to ensur
 As best practices we heavily encourage the use of setuptools \cite{noauthor_pypasetuptools_2022} or an alternative such as poetry \cite{noauthor_poetry_nodate} for package installation. We also encourage that packages be available on common package repositories such as PyPi \cite{noauthor_pypi_nodate} and conda-forge \cite{conda-forge_community_conda-forge_2015}. The use of such repositories and their respective package managers can significantly lower the barrier to installing a package, enabling new users to rapidly get started using it.
 
 \subsection{Bug reporting, user discussions, and community guidelines}
-\label{Sec:community}
+\label{sec:community}
 
 To help maintain and grow the project, it is important to specify where users can raise any issues they might have about the project or simply ask questions about its operation. To achieve this, we recommend at the very least adding documentation that points users to an issue tracker.
 
