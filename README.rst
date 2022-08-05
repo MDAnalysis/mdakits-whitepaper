@@ -1,6 +1,7 @@
 ==========================
   The MDAKit White Paper
 ==========================
+|build|
 
 Current release: 0.1.0b
 
@@ -38,3 +39,8 @@ are Copyright (c) 2022 `LiveCOMS Journal`_ and are used under the
    https://github.com/livecomsjournal/article_templates/tree/master/templates
 .. _`CC-BY-4.0 license`:
    https://github.com/livecomsjournal/article_templates/blob/master/LICENSE
+   
+
+.. |build| image:: https://github.com/MDAnalysis/mdakits-whitepaper/actions/workflows/build-latex.yaml/badge.svg
+   :alt: Github Actions Build LaTeX Status
+   :target: https://github.com/MDAnalysis/mdakits-whitepaper/actions/workflows/build-latex.yaml
