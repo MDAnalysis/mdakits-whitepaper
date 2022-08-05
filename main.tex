@@ -223,7 +223,7 @@ As of writing, the MDAnalysis library is currently licensed under GPLv2+ \cite{n
 
 The ability to clearly identify changes in a codebase is crucial to enabling reproducible science. By referencing a specific release version, it is possible to trace back any bug fixes or major changes which could lead to a difference in results obtained with a later version of the same codebase. Whilst we encourage the use of semver \cite{preston-werner_semantic_nodate}, any PEP440 \cite{noauthor_pep_nodate-1} compliant versioning specification, would be suitable for MDAKits.
 
-Beyond versioning releases, it is also crucial to be able to develop code in a sustainable and collaborative manner. The most popular way of achieving this is through the use of version control through Git \cite{noauthor_git_nodate}. We require all MDAKits to be held in a publicly facing version controlled repository such as GitHub \cite{github_inc_github_2022-2}, GitLab \cite{gitlab_inc_gitlab_2022}, or Bitbucket \cite{atlassian_bitbucket_2022}.
+Beyond versioning releases, it is also crucial to be able to develop code in a sustainable and collaborative manner. The most popular way of achieving this is through the use of version control through Git \cite{noauthor_git_nodate}. We require all MDAKits to be held in a publicly facing version controlled repository such as GitHub \cite{github_inc_github_2022}, GitLab \cite{gitlab_inc_gitlab_2022}, or Bitbucket \cite{atlassian_bitbucket_2022}.
 
 \subsection{Designated code authors and maintainers (required)}
 \label{sec:authors}
@@ -244,7 +244,7 @@ Testing a critical component to ensure that code behaves as intended. Not only d
 
 Ideally one should do full unit testing of the contents of a code, ensuring that not only a specific outcome is reached, but also that each smaller component works. As part of best practices, we highly recommend implementing tests using a framework such as pytest \cite{krekel_pytest-devpytest_2004} for executing tests and codecov \cite{codecov_llc_codecov_2022} to capture which lines are covered by the tests. We strongly encourage that a minimum of at least 80% of the code lines be covered by tests. 
 
-To ensure that tests are run regularly, best practices would be to implement a continuous integration pipeline that tests every time new code is introduced. We encourage the use of free pipelines such as GitHub Actions \cite{github_inc_github_2022-1} to achieve this.
+To ensure that tests are run regularly, best practices would be to implement a continuous integration pipeline that tests every time new code is introduced. We encourage the use of free pipelines such as GitHub Actions \cite{github_inc_github_2022-2} to achieve this.
 
 \subsection{Packaging}
 \label{sec:packaging}
@@ -369,7 +369,7 @@ We have laid out a number of best practices here that we encourage MDAKits to fu
 \subsection{Raising issues, concerns, and paths to registry removal}
 \label{sec:removal}
 
-If community members (users, developers or otherwise) have concerns about an MDAKit, we primarily encourage them to raise issues on the MDAKit’s issue tracker. However, in situations where the MDAKit maintainers cannot respond, or if the concern relates to code of conduct breaches, MDAnalysis developers may step in. If an MDAKit has systemic issues with its correctness, the MDAKit may be given special annotations warning users about the issues before using the code. We generally view the MDAKit registry as a permanent record, and will avoid removing packages after registration even if they become fully obsolete. However, we reserve the right to remove packages at our discretion in specific cases, notably code of conduct breaches and violation of the GitHub terms of service \cite{github_inc_github_2022}.
+If community members (users, developers or otherwise) have concerns about an MDAKit, we primarily encourage them to raise issues on the MDAKit’s issue tracker. However, in situations where the MDAKit maintainers cannot respond, or if the concern relates to code of conduct breaches, MDAnalysis developers may step in. If an MDAKit has systemic issues with its correctness, the MDAKit may be given special annotations warning users about the issues before using the code. We generally view the MDAKit registry as a permanent record, and will avoid removing packages after registration even if they become fully obsolete. However, we reserve the right to remove packages at our discretion in specific cases, notably code of conduct breaches and violation of the GitHub terms of service \cite{github_inc_github_2022-1}.
 
 \subsection{Long term registry maintenance and support}
 \label{sec:maintenance}
