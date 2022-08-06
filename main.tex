@@ -280,7 +280,7 @@ This metadata will be used for two purposes: continuous integration testing and 
 \subsection{Registering MDAKits}
 \label{sec:registration}
 
-\begin{figure*}[hbt!]
+\begin{listing*}[bht!]
     \centering
     \begin{minted}{yaml}
 ## Required entries
@@ -314,11 +314,11 @@ publications:
     \end{minted}
     \caption{YAML metadata file for an MDAKit entry of the propkatraj package, stored as \texttt{mdakits/propkatraj/metadata.yaml} in the registry repository.}
     \label{fig:metadatapropkatraj}
-\end{figure*}
+\end{listing*}
 
 A key feature of the MDAKit framework is the process of adding MDAKits to the registry. As previously defined, our intent is to offer a low barrier to entry and have packages be registered early in their development cycles. This allows developers to benefit from the MDAKit registry validation and review processes early on, hopefully lowering the barrier to further improvements and encouraging early user interactions and feedback.
  
-From an MDAKit developer standpoint, the registration process involves opening a pull request against the MDAKit registry adding a new YAML file (Fig. 2) with metadata about the project. The metadata, as detailed in Fig.~\ref{fig:metadatapropkatraj}, contains information such as the MDAKit description, source code location, install instructions, how to run tests, and where to find usage documentation. Complete details about the metadata file specification will be provided in the MDAKit registry documentation.
+From an MDAKit developer standpoint, the registration process involves opening a pull request against the MDAKit registry adding a new YAML file with metadata about the project. The metadata, as detailed in Listing~\ref{fig:metadatapropkatraj}, contains information such as the MDAKit description, source code location, install instructions, how to run tests, and where to find usage documentation. Complete details about the metadata file specification will be provided in the MDAKit registry documentation.
 
 After a pull request is opened, the MDAnalysis developers will review the contents of the submission based on the following criteria:
 \begin{enumerate}
