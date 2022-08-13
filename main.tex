@@ -3,7 +3,7 @@
 %%%
 %%%
 \documentclass[9pt,whitepaper]{livecoms}
-% use livecoms template (under CC-BY 4.0)
+% use livecoms+MDA hack template (under CC-BY 4.0)
 %
 % Use the 'pubversion' option for adding the citation and publication
 % information to the document footer, when the DOI is assigned.
@@ -25,7 +25,7 @@
 %
 \newcommand{\versionnumber}{0.1.0}  % you should update the minor version number in preprints and major version number of submissions.
 
-%%% SHOULD THIS BE THE MDAKits repo OR https://github.com/MDAnalysis/mdakits-whitepaper ?
+%%% point to the MDAKits repository because we want community feedback there
 \newcommand{\githubrepository}{\url{https://github.com/MDAnalysis/MDAKits}}
 % this should be the main github repository for this article
 
@@ -53,6 +53,7 @@
 % put in author order
 \orcid{Jonathan Barnoud}{0000-0003-0343-7796}
 \orcid{Oliver Beckstein}{0000-0003-1340-0831}
+\orcid{Fiona Naughton}{0000-0003-0162-1346}
 \orcid{Lily Wang}{0000-0002-6095-6704}
 
 
@@ -111,7 +112,7 @@ Until recently, MDAnalysis encouraged users to contribute their code back into t
 \begin{itemize}
     \item MDAnalysis can ensure that the code follows best practices (including documentation and tests).
     \item Code is promoted and made freely accessible to all MDAnalysis users.
-    \item The original contributing developers are free of the burden of maintenance, support, and potential updates as these primarily become the responsibility of MDAnalysis.
+    \item Maintenance, support, and potential updates are performed by the experienced MDAnalysis developer team, ensuring that the contributed code remains functional even while the other parts of the library change. The original developers can thus focus on other work.
 \end{itemize}
 However, the many costs of this approach can, under some conditions, result in unsustainable, untenable disadvantages:
 \begin{itemize}
@@ -146,7 +147,7 @@ In the rest of this document we detail how MDAnalysis proposes to implement such
     \label{fig:workflow}
 \end{figure}
 
-The MDAKit framework (Fig.~\ref{fig:workflow}) is designed to be a complete workflow to help and incentivise developers to go from the initial stages of package development all the way through to the long term maintenance of a mature codebase, while adhering to best practices.
+The MDAKit framework (Fig.~\ref{fig:workflow}) is designed to be a complete workflow to help and incentivize developers to go from the initial stages of package development all the way through to the long term maintenance of a mature codebase, while adhering to best practices.
 
 
 \subsection{Main goals}
@@ -235,12 +236,12 @@ Beyond versioning releases, it is also crucial to be able to develop code in a s
 \subsection{Designated code authors and maintainers (required)}
 \label{sec:authors}
 
-In order for users to be able to contact the code owners and maintainers, all MDAKits should clearly list their authors and a means of contacting the persons responsible for maintaining the codebase. To incentivise and recognise contributors throughout the life of a project, we recommend the use of a version controlled “authors” file which lists the authors to a codebase over time.
+In order for users to be able to contact the code owners and maintainers, all MDAKits should clearly list their authors and a means of contacting the persons responsible for maintaining the codebase. To incentivize and recognize contributors throughout the life of a project, we recommend the use of a version controlled “authors” file which lists the authors to a codebase over time.
  
 \subsection{Documentation (required)}
 \label{sec:documentation}
 
-Describing what a given code does and how to use it is a key component of open sharing. Ideally a package would include a complete description of the entire codebase, including both API documentation and some kind of user guide with worked examples on how the code could be used in certain scenarios. Whilst this is recommended as best practices for an MDAKit, we recognise that this is not  always feasible, especially in the early stages of development. Therefore, the minimum requirement for MDAKits is to have a readme file which details the key aspects of the MDAKit, such as what it is intended to do, how to install it, and a basic usage example.
+Describing what a given code does and how to use it is a key component of open sharing. Ideally a package would include a complete description of the entire codebase, including both API documentation and some kind of user guide with worked examples on how the code could be used in certain scenarios. Whilst this is recommended as best practices for an MDAKit, we recognize that this is not  always feasible, especially in the early stages of development. Therefore, the minimum requirement for MDAKits is to have a readme file which details the key aspects of the MDAKit, such as what it is intended to do, how to install it, and a basic usage example.
 
 For best practices, we strongly recommend using docstrings (see PEP 257 \cite{noauthor_pep_nodate}) to document code components and using a tool such as ReadTheDocs \cite{read_the_docs_inc_read_2022} to build, version and host documentation in a user-friendly manner. We also recommend using duecredit \cite{halchenko_duecreditduecredit_2021} to provide the correct attributions to a given method if it has been published previously.
 
@@ -370,7 +371,7 @@ The existence of the MDAKits framework does not preclude the addition of new cod
 \subsection{Towards publication}
 \label{sec:publication}
 
-We have laid out a number of best practices here that we encourage MDAKits to fulfill. These essentially amount to the majority of the contribution criteria for submissions to software-focused journals such as the Journal Open Source Software (JOSS) \cite{noauthor_journal_nodate}. In order to incentivise developers, we will heavily encourage MDAKits to consider submission to a journal such as JOSS \cite{noauthor_journal_nodate} once they meet the required levels of best practices. To aid in this process, the MDAnalysis developers will in the first instance work with journal editors at JOSS to create a streamlined process to submit MDAKits as JOSS entries \cite{noauthor_submitting_2018}. The details of this process are still under development.
+We have laid out a number of best practices here that we encourage MDAKits to fulfill. These essentially amount to the majority of the contribution criteria for submissions to software-focused journals such as the Journal Open Source Software (JOSS) \cite{noauthor_journal_nodate}. In order to incentivize developers, we will heavily encourage MDAKits to consider submission to a journal such as JOSS \cite{noauthor_journal_nodate} once they meet the required levels of best practices. To aid in this process, the MDAnalysis developers will in the first instance work with journal editors at JOSS to create a streamlined process to submit MDAKits as JOSS entries \cite{noauthor_submitting_2018}. The details of this process are still under development.
 
 \subsection{Raising issues, concerns, and paths to registry removal}
 \label{sec:removal}
