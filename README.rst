@@ -3,9 +3,9 @@
 ==========================
 |build|
 
-Current release: 0.1.0b
+Current release: 0.1.0
 
-Status: To be reviewed by key stakeholders
+Status: Published (https://doi.org/10.6084/m9.figshare.20520726.v1)
 
 Held here is the white paper defining the MDAKit Framework. It details the key
 overarching components which define the creation, registration and ongoing
@@ -16,10 +16,12 @@ Getting involved
 ================
 
 We would very much like to hear from any interested parties about MDAKits and
-the MDAKit white paper. For any comments, please open an issue on this
-repository or contact the MDAnalysis MDAKit team on `discord`_.
+the MDAKit white paper. For any comments, please open an `issue on the
+MDAKits repository`_ or contact the MDAnalysis MDAKit team on `discord`_.
 
 
+.. _`issue on the MDAKits repository`:
+   https://github.com/MDAnalysis/MDAKits/issues
 .. _discord: https://discord.gg/fXTSfDJyxE
 
 
