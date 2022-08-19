@@ -3,7 +3,7 @@
 %
 % adapted from elife template, v1.4
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{livecoms}[2017/08/10, v0.5...+MDAnalysis patches]
+\ProvidesClass{livecomsMDA}[2017/08/10, v0.5...+MDAnalysis customizations]
 
 \RequirePackage[english]{babel}
 
@@ -292,11 +292,12 @@
 % 1. Publication Version: put submission/acceptance dates in left footer and citation information in right footer
 \if@pubversion
   \lfoot{\ifthenelse{\value{page}=1}
-    {\small\color{LiveCoMSMediumGrey}Received: \@publisheddatereceived \\ Accepted: \@publisheddateaccepted}
-    {~\\~}
+    %%% REMOVE LiveCoMS publication information
+    %%%{\small\color{LiveCoMSMediumGrey}Received: \@publisheddatereceived \\ Accepted: \@publisheddateaccepted}
+    %%%{~\\~}
   }%
   \rfoot{\small\color{LiveCoMSMediumGrey}\href{https://doi.org/\@publishedDOI}{https://doi.org/\@publishedDOI}\\
-    {\it Living J. Comp. Mol. Sci.} \@publishedyear, \@publishedvolume\nobreak\hspace{.05em}(\@publishedissue), \@publishedarticlenum
+    {\it MDAnalysis} \@publishedyear%, \@publishedvolume\nobreak\hspace{.05em}(\@publishedissue), \@publishedarticlenum
   }%
 \fi
 % 2. Page Number in center of footer

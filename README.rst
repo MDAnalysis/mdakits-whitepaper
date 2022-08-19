@@ -29,9 +29,11 @@ Acknowledgements
 Funding provided by the Chan-Zuckerberg Initiative under an EOSS4
 grant.
 
-The `LaTeX templates`_ (``livecoms.cls``, ``vancouver-livecoms.bst``)
-are Copyright (c) 2022 `LiveCOMS Journal`_ and are used under the
-`CC-BY-4.0 license`_.
+We use slightly modified versions of the `LiveCOMS Journal`_  `LaTeX
+templates`_ (``livecoms.cls``, ``vancouver-livecoms.bst``), which 
+are Copyright (c) 2022 `LiveCOMS Journal`_. The original templates are used under the
+`CC-BY-4.0 license`_ and all changes are also distributed under the
+same license.
 
 
 .. _`LiveCOMS Journal`: https://www.livecomsjournal.org
